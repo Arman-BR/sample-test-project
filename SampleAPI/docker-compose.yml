@@ -1,0 +1,6 @@
+services:
+  sampleapi:
+    image: ${DOCKER_REGISTRY-}sampleapi
+    build:
+      context: .
+      dockerfile: SampleAPI\Dockerfile

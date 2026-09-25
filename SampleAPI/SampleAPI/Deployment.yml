@@ -1,0 +1,19 @@
+apiVersion: apps/v2
+kind: Deployment
+metadata:
+  name: mysampleapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: mysampleapi
+  template:
+    metadata:
+        labels:
+            app: mysampleapi
+    spec:
+        containers:
+        - name: mysampleapi
+          image: myregstry.azurecr.io/mysampleapi:v2
+          ports:
+          - containerPort: 8080
